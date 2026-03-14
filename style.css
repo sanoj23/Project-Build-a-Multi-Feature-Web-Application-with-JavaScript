@@ -1,0 +1,187 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+min-height:100vh;
+transition:0.4s;
+}
+
+/* Background */
+
+.background{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+
+background:
+linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+url("https://images.wondershare.com/edrawmind/articles2024/task-management/task-management-1.jpg");
+
+background-size:cover;
+background-position:center;
+}
+
+/* Light Theme */
+
+body.light{
+color:#111;
+}
+
+body.light .task-form,
+body.light .task-controls,
+body.light .task-list{
+
+background:rgba(255,255,255,0.8);
+}
+
+/* Dark Theme */
+
+body.dark{
+color:white;
+}
+
+body.dark .task-form,
+body.dark .task-controls,
+body.dark .task-list{
+
+background:rgba(0,0,0,0.6);
+}
+
+/* Header */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 60px;
+}
+
+header button{
+padding:8px 16px;
+border:none;
+border-radius:8px;
+background:#0071e3;
+color:white;
+cursor:pointer;
+}
+
+/* Layout */
+
+.container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+padding:40px 60px;
+}
+
+.task-form,
+.task-controls,
+.task-list{
+
+border-radius:16px;
+padding:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Inputs */
+
+input,textarea,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+}
+
+#addTaskBtn{
+background:#0a84ff;
+border:none;
+padding:10px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+/* Task list */
+
+ul{
+list-style:none;
+margin-top:15px;
+}
+
+li{
+padding:15px;
+margin-bottom:10px;
+border-radius:12px;
+transition:0.3s;
+}
+
+body.light li{
+background:#f5f5f7;
+}
+
+body.dark li{
+background:#2a2a2a;
+}
+
+li:hover{
+transform:scale(1.02);
+}
+
+.completed{
+text-decoration:line-through;
+opacity:0.6;
+}
+
+li button{
+margin-top:10px;
+margin-right:6px;
+padding:6px 10px;
+border:none;
+border-radius:6px;
+background:#0071e3;
+color:white;
+cursor:pointer;
+}
+
+/* Notification */
+
+#notification{
+
+position:fixed;
+
+top:30px;
+right:30px;
+
+background:#ff3b30;
+color:white;
+
+padding:15px 25px;
+
+border-radius:10px;
+
+display:none;
+
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+header{
+padding:20px;
+}
+
+}
